@@ -1,0 +1,7 @@
+@use "@angular/material" as mat;
+
+$typography: mat.define-typography-config(
+  $font-family: "Metropolis" Roboto "Helvetica Neue" sans-serif,
+);
+
+@include mat.core($typography);

@@ -1,0 +1,49 @@
+@use "/src/assets/styles/colors.scss" as *;
+
+.text-grey {
+  color: var(--grey);
+}
+
+.text-grey-2 {
+  color: var(--grey-darken-2);
+}
+
+.heading-md {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 40px;
+  margin: 0;
+}
+
+.heading-lg {
+  font-size: 90px;
+  font-weight: 800;
+  line-height: 90px;
+}
+
+.text-md {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  margin: 0;
+}
+
+.content {
+  padding: 100px;
+  .content-body {
+    max-width: 600px;
+  }
+}
+
+.content-container--loom {
+  background: var(--loom-lighten-1);
+  color: var(--white);
+}
+
+.logo-wrapper {
+  img {
+    border-right: 1px solid var(--white);
+    padding-right: 30px;
+    margin-right: 30px;
+  }
+}

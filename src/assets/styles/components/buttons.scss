@@ -1,0 +1,27 @@
+@use "../colors.scss";
+@use "../constants.scss" as *;
+
+button {
+  &.button-rounded {
+    border-radius: $border-radius-lg;
+  }
+
+  &.button-contrast.mat-stroked-button {
+    color: var(--white);
+    border-color: var(--white);
+  }
+
+  &.button-lg {
+    padding: 19px 38px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 1px;
+    border-width: 2px;
+  }
+
+  &.button-weave.mat-raised-button {
+    background-color: var(--weave-lighten-1);
+    color: var(--white);
+  }
+}
