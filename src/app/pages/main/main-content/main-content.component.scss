@@ -1,0 +1,18 @@
+@use "/src/assets/styles/colors.scss" as *;
+
+.content {
+  padding: 100px;
+  .content-body {
+    max-width: 600px;
+  }
+}
+
+.content-container--loom {
+  background: var(--loom-lighten-1);
+  color: var(--white);
+}
+
+.content-container--tapestry {
+  background: var(--tapestry-lighten-1);
+  color: var(--white);
+}

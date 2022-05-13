@@ -1,0 +1,16 @@
+<div
+  class="flex flex-row content-container"
+  [ngClass]="{
+    'content-container--loom': themeType === AppTypes.Loom,
+    'content-container--tapestry': themeType === AppTypes.Tapestry
+  }"
+>
+  <div *ngIf="!leftContent" class="w-3/6"></div>
+  <div class="w-3/6 content" [ngClass]="leftContent ? '!pr-0' : '!pl-0'">
+    <div class="content-body" [ngClass]="leftContent ? 'ml-auto' : 'mr-auto'">
+      <ng-content></ng-content>
+    </div>
+  </div>
+
+  <div *ngIf="leftContent" class="w-3/6"></div>
+</div>
