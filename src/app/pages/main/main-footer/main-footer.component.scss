@@ -1,0 +1,30 @@
+@use "/src/assets/styles/colors.scss" as *;
+@use "/src/assets/styles/constants.scss" as *;
+
+.main-footer {
+  background: var(--grey-darken-2);
+  padding: $page-padding;
+  color: var(--white);
+  letter-spacing: 1px;
+
+  img {
+    height: 40px;
+    width: 112px;
+    margin-bottom: 20px;
+  }
+
+  .footer-text-wrapper {
+    margin-top: 10px;
+  }
+
+  .vertical-divider {
+    margin: 0 20px;
+  }
+
+  .footer-text {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 20px;
+    cursor: pointer;
+  }
+}

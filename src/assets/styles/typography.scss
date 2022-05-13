@@ -18,6 +18,10 @@ $typography: mat.define-typography-config(
   color: var(--grey-darken-2);
 }
 
+.text-white {
+  color: var(--white);
+}
+
 .text-weave {
   color: var(--weave-lighten-1);
 }
@@ -50,4 +54,9 @@ $typography: mat.define-typography-config(
   font-weight: 400;
   line-height: 30px;
   margin: 0;
+}
+
+.text-sm {
+  font-size: 16px;
+  line-height: 20px;
 }
