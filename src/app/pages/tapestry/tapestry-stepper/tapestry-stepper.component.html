@@ -1,1 +1,124 @@
-<p>tapestry-stepper works!</p>
+<app-tapestry-nav></app-tapestry-nav>
+<div class="flex flex-row">
+  <div class="tapestry-stepper-body w-3/6">
+    <div *ngIf="stepperEl" class="tapestry-stepper-controller flex flex-row">
+      <div
+        *ngFor="let item of stepCounts; let i = index"
+        class="tapestry-stepper-controller__button"
+        [ngClass]="{
+          'tapestry-stepper-controller__button--active':
+            i <= (stepperEl && stepperEl.selectedIndex)
+        }"
+        (click)="selectStep(i)"
+      ></div>
+    </div>
+    <mat-stepper linear #stepper>
+      <!-- Step 1 -->
+      <mat-step>
+        <ng-container>
+          <div class="heading-md text-grey !mb-10">Ad Payments</div>
+
+          <div class="heading-lg text-grey-2">
+            How will you be paying for your ads?
+          </div>
+
+          <div class="!mt-10 text-md text-grey">
+            Select the payment platform that you will be using to pay for your
+            advertisements. Don’t worry, this can be changed later.
+          </div>
+
+          <div class="flex flex-row !mt-10 !mb-10">
+            <button
+              mat-raised-button
+              class="button-rounded button-tapestry button-lg !mr-5"
+              (click)="goBack()"
+            >
+              Go Back
+            </button>
+
+            <button
+              mat-raised-button
+              class="button-rounded button-tapestry button-lg"
+              matStepperNext
+            >
+              Continue?
+            </button>
+          </div>
+
+          <div class="text-tapestry text-md cursor-pointer">
+            Skip and Ask Me Later
+          </div>
+        </ng-container>
+      </mat-step>
+
+      <!-- Step 2 -->
+      <mat-step>
+        <ng-container>
+          <div class="heading-md text-grey !mb-10">Ad Payments Credentials</div>
+
+          <div class="heading-lg text-grey-2">
+            Sign in to your Google Wallet account.
+          </div>
+
+          <div class="!mt-10 text-md text-grey">
+            We’ll verify your Google Wallet account as your payment method for
+            your advertisements.
+          </div>
+
+          <div class="flex flex-row !mt-10 !mb-10">
+            <button
+              mat-raised-button
+              class="button-rounded button-tapestry button-lg !mr-5"
+              matStepperPrevious
+            >
+              Go Back
+            </button>
+
+            <button
+              mat-raised-button
+              class="button-rounded button-tapestry button-lg"
+              matStepperNext
+            >
+              Continue?
+            </button>
+          </div>
+
+          <div class="text-tapestry text-md cursor-pointer">
+            Skip and Ask Me Later
+          </div>
+        </ng-container>
+      </mat-step>
+
+      <!-- Step 3 -->
+      <mat-step>
+        <ng-container>
+          <div class="heading-md text-grey !mb-10">Setup Complete!</div>
+
+          <div class="heading-lg text-grey-2">You’re good to go!</div>
+
+          <div class="!mt-10 text-md text-grey">
+            We have everything we need to get you building the best ad campaigns
+            the world has seen! Let’s build your first campaign!
+          </div>
+
+          <div class="flex flex-row !mt-10 !mb-10">
+            <button
+              mat-raised-button
+              class="button-rounded button-tapestry button-lg !mr-5"
+              matStepperPrevious
+            >
+              Go Back
+            </button>
+
+            <button
+              mat-raised-button
+              class="button-rounded button-tapestry button-lg"
+            >
+              Finish Setup
+            </button>
+          </div>
+        </ng-container>
+      </mat-step>
+    </mat-stepper>
+  </div>
+</div>

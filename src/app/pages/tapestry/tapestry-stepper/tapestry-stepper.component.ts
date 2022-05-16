@@ -1,15 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AppRoutes } from 'src/app/shared/constants';
+import { MatStepper, StepState } from '@angular/material/stepper';
 
 @Component({
   selector: 'app-tapestry-stepper',
   templateUrl: './tapestry-stepper.component.html',
-  styleUrls: ['./tapestry-stepper.component.scss']
+  styleUrls: ['./tapestry-stepper.component.scss'],
 })
 export class TapestryStepperComponent implements OnInit {
+  @ViewChild('stepper', { static: true }) stepperEl: MatStepper;
 
-  constructor() { }
+  stepCounts = Array(3);
+  isEditable = false;
+  currentStep: number;
 
-  ngOnInit(): void {
+  constructor(private router: Router, private _formBuilder: FormBuilder) {}
+
+  ngOnInit(): void {}
+
+  goBack() {
+    this.router.navigate([AppRoutes.Tapestry]);
   }
 
+  selectStep(index: number) {
+    this.stepperEl.selectedIndex = index;
+  }
 }
