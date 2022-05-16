@@ -26,6 +26,10 @@ $typography: mat.define-typography-config(
   color: var(--weave-lighten-1);
 }
 
+.text-tapestry {
+  color: var(--tapestry-lighten-1);
+}
+
 .heading-md {
   font-size: 30px;
   font-weight: 500;

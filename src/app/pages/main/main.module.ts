@@ -7,10 +7,9 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatButtonModule } from '@angular/material/button';
 import { MainContentComponent } from './main-content/main-content.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
-import { MainFooterComponent } from './main-footer/main-footer.component';
 
 @NgModule({
-  declarations: [MainComponent, MainContentComponent, MainNavComponent, MainFooterComponent],
+  declarations: [MainComponent, MainContentComponent, MainNavComponent],
   imports: [CommonModule, MainRoutingModule, MatSliderModule, MatButtonModule],
 })
 export class MainModule {}

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainFooterComponent } from './main-footer.component';
+import { TapestryStepperComponent } from './tapestry-stepper.component';
 
-describe('MainFooterComponent', () => {
-  let component: MainFooterComponent;
-  let fixture: ComponentFixture<MainFooterComponent>;
+describe('TapestryStepperComponent', () => {
+  let component: TapestryStepperComponent;
+  let fixture: ComponentFixture<TapestryStepperComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MainFooterComponent ]
+      declarations: [ TapestryStepperComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MainFooterComponent);
+    fixture = TestBed.createComponent(TapestryStepperComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
