@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --deploy-url=/knitly-ui/",
+    "build": "ng build --base-href=/knitly-ui/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
