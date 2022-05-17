@@ -10,9 +10,9 @@ import { LayoutModule } from './layout/layout.module';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     LayoutModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
