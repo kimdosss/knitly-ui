@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import * as dayjs from 'dayjs';
 
 @Component({
-  selector: 'app-main-footer',
-  templateUrl: './main-footer.component.html',
-  styleUrls: ['./main-footer.component.scss'],
+  selector: 'app-footer',
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.scss'],
 })
-export class MainFooterComponent implements OnInit {
+export class FooterComponent implements OnInit {
   currentYear: string;
   constructor() {}
 

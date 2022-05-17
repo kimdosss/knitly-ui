@@ -1,0 +1,50 @@
+@use "/src/assets/styles/colors.scss" as *;
+@use "/src/assets/styles/constants.scss" as *;
+
+.tapestry-payment-item {
+  background: var(--tapestry-lighten-1);
+  border-radius: 4px;
+  color: var(--white);
+  padding: 30px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: $transition-small;
+  span {
+    font-weight: 800;
+  }
+}
+
+.tapestry-payment-item__circle {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background: var(--white);
+  margin-right: 20px;
+  position: relative;
+  transition: inherit;
+  &::after {
+    content: "";
+    transition: inherit;
+    display: inline-block;
+    height: 0;
+    width: 0;
+    background: var(--tapestry-lighten-1);
+    position: absolute;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+  }
+}
+
+.tapestry-payment-item--selected {
+  background: var(--grey-darken-2);
+  .tapestry-payment-item__circle::after {
+    height: 16px;
+    width: 16px;
+    background: var(--grey-darken-2);
+    left: calc(50% - 8px);
+    top: calc(50% - 8px);
+  }
+}

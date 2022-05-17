@@ -3,3 +3,8 @@ export enum AppTypes {
   Weave = 'Weave',
   Tapestry = 'Tapestry',
 }
+
+export enum AppRoutes {
+  Main = 'main',
+  Tapestry = 'tapestry',
+}

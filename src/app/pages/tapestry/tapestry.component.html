@@ -1,0 +1,31 @@
+<app-tapestry-nav></app-tapestry-nav>
+<div class="tapestry-body-wrapper flex flex-row">
+  <div class="tapestry-body w-3/6">
+    <div class="heading-md text-grey !mb-10">Welcome to</div>
+
+    <div class="heading-xl text-grey-2">Tapestry.</div>
+
+    <div class="flex flex-row items-center mt-5">
+      <div class="text-md">Powered by</div>
+      <img src="assets/images/logo-dark.svg" class="img-md ml-6" />
+    </div>
+
+    <div class="!mt-10 text-md text-grey">
+      In order to get the ball rolling, we’ll need to ask you a few questions.
+      These questions help us to pre-setup advertising channels, and get you
+      building campaigns as fast as possible.
+    </div>
+
+    <button
+      mat-raised-button
+      class="button-rounded button-tapestry button-lg !mt-10 !mb-10"
+      (click)="clickSetup()"
+    >
+      Let’s Get Started
+    </button>
+
+    <div class="text-tapestry text-md cursor-pointer">
+      Skip and Ask Me Later
+    </div>
+  </div>
+</div>

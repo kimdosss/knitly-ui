@@ -1,0 +1,35 @@
+@use "/src/assets/styles/colors.scss" as *;
+
+.tapestry-stepper-body {
+  padding: 100px 50px 100px 100px;
+}
+
+.tapestry-stepper-controller {
+  margin-bottom: 40px;
+}
+
+.tapestry-stepper-controller__button {
+  width: 40px;
+  height: 10px;
+  border-radius: 4px;
+  margin-right: 2px;
+  background: var(--grey-lighten-3);
+  cursor: pointer;
+}
+
+.tapestry-stepper-controller__button--active {
+  background: var(--tapestry-lighten-1);
+}
+
+.tapestry-body__left-section {
+  padding-right: 50px;
+}
+
+::ng-deep {
+  .mat-horizontal-stepper-header-container {
+    display: none !important;
+  }
+  .mat-horizontal-content-container {
+    padding: 0 !important;
+  }
+}
