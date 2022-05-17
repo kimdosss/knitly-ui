@@ -1,0 +1,43 @@
+@use "../colors.scss";
+@use "../constants.scss" as *;
+
+button {
+  letter-spacing: 1px;
+  &.button-rounded {
+    border-radius: $border-radius-lg;
+  }
+
+  &.button-contrast.mat-stroked-button {
+    color: var(--white);
+    border-color: var(--white);
+  }
+
+  &.button-lg {
+    padding: 19px 38px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 1px;
+    border-width: 2px;
+  }
+
+  &.button-weave.mat-raised-button {
+    background-color: var(--weave-lighten-1);
+    color: var(--white);
+  }
+
+  &.button-tapestry.mat-raised-button {
+    background-color: var(--tapestry-lighten-1);
+    color: var(--white);
+  }
+
+  &.button-tapestry--contrast.mat-raised-button {
+    background-color: var(--white);
+    color: var(--tapestry-lighten-1);
+  }
+
+  &.button-loom.mat-raised-button {
+    background-color: var(--loom-lighten-1);
+    color: var(--white);
+  }
+}

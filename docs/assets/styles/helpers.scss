@@ -1,0 +1,14 @@
+@use "/src/assets/styles/colors.scss" as *;
+
+.vertical-divider {
+  border-left: 1px solid var(--white);
+}
+
+.img-md {
+  height: 40px;
+  width: 112px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

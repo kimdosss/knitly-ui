@@ -20,17 +20,17 @@ const routes: Routes = [
             (m) => m.TapestryModule
           ),
       },
+      {
+        path: '**',
+        redirectTo: AppRoutes.Main,
+        pathMatch: 'full',
+      },
     ],
   },
-  // {
-  //   path: '**',
-  //   redirectTo: AppRoutes.Main,
-  //   pathMatch: 'full',
-  // },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
