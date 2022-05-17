@@ -1,124 +1,167 @@
 <app-tapestry-nav></app-tapestry-nav>
-<div class="flex flex-row">
-  <div class="tapestry-stepper-body w-3/6">
-    <div *ngIf="stepperEl" class="tapestry-stepper-controller flex flex-row">
-      <div
-        *ngFor="let item of stepCounts; let i = index"
-        class="tapestry-stepper-controller__button"
-        [ngClass]="{
-          'tapestry-stepper-controller__button--active':
-            i <= (stepperEl && stepperEl.selectedIndex)
-        }"
-        (click)="selectStep(i)"
-      ></div>
+<div class="tapestry-stepper-body">
+  <div class="tapestry-stepper-controller flex flex-row">
+    <div
+      *ngFor="let item of stepCounts; let i = index"
+      class="tapestry-stepper-controller__button"
+      [ngClass]="{
+        'tapestry-stepper-controller__button--active': i <= selectedIndex
+      }"
+      (click)="selectStep(i)"
+    ></div>
+  </div>
+  <!-- Step 1 -->
+  <div *ngIf="selectedIndex === 0" class="flex flex-row">
+    <!-- Left section -->
+    <div class="w-3/6 tapestry-body__left-section">
+      <div class="heading-md text-grey !mb-10">Ad Payments</div>
+
+      <div class="heading-lg text-grey-2">
+        How will you be paying for your ads?
+      </div>
+
+      <div class="!mt-10 text-md text-grey">
+        Select the payment platform that you will be using to pay for your
+        advertisements. Don’t worry, this can be changed later.
+      </div>
+
+      <div class="flex flex-row !mt-10 !mb-10">
+        <button
+          mat-raised-button
+          class="button-rounded button-tapestry button-lg !mr-5"
+          (click)="goBack()"
+        >
+          Go Back
+        </button>
+
+        <button
+          mat-raised-button
+          class="button-rounded button-tapestry button-lg"
+          (click)="nextStep()"
+        >
+          Continue?
+        </button>
+      </div>
+
+      <div class="text-tapestry text-md cursor-pointer">
+        Skip and Ask Me Later
+      </div>
     </div>
-    <mat-stepper linear #stepper>
-      <!-- Step 1 -->
-      <mat-step>
-        <ng-container>
-          <div class="heading-md text-grey !mb-10">Ad Payments</div>
 
-          <div class="heading-lg text-grey-2">
-            How will you be paying for your ads?
-          </div>
+    <!-- Right section -->
+    <div class="w-3/6">
+      <app-tapestry-payment-item
+        *ngFor="let item of paymentType"
+        [name]="item"
+        [selected]="item === selectedPayment"
+        (click)="selectedPayment = item"
+      ></app-tapestry-payment-item>
+    </div>
+  </div>
 
-          <div class="!mt-10 text-md text-grey">
-            Select the payment platform that you will be using to pay for your
-            advertisements. Don’t worry, this can be changed later.
-          </div>
+  <!-- Step 2 -->
+  <div *ngIf="selectedIndex === 1" class="flex flex-row">
+    <div class="w-3/6 tapestry-body__left-section">
+      <div class="heading-md text-grey !mb-10">Ad Payments Credentials</div>
 
-          <div class="flex flex-row !mt-10 !mb-10">
-            <button
-              mat-raised-button
-              class="button-rounded button-tapestry button-lg !mr-5"
-              (click)="goBack()"
-            >
-              Go Back
-            </button>
+      <div class="heading-lg text-grey-2">
+        Sign in to your Google Wallet account.
+      </div>
 
-            <button
-              mat-raised-button
-              class="button-rounded button-tapestry button-lg"
-              matStepperNext
-            >
-              Continue?
-            </button>
-          </div>
+      <div class="!mt-10 text-md text-grey">
+        We’ll verify your Google Wallet account as your payment method for your
+        advertisements.
+      </div>
 
-          <div class="text-tapestry text-md cursor-pointer">
-            Skip and Ask Me Later
-          </div>
-        </ng-container>
-      </mat-step>
+      <div class="flex flex-row !mt-10 !mb-10">
+        <button
+          mat-raised-button
+          class="button-rounded button-tapestry button-lg !mr-5"
+          (click)="preStep()"
+        >
+          Go Back
+        </button>
 
-      <!-- Step 2 -->
-      <mat-step>
-        <ng-container>
-          <div class="heading-md text-grey !mb-10">Ad Payments Credentials</div>
+        <button
+          mat-raised-button
+          class="button-rounded button-tapestry button-lg"
+          (click)="nextStep()"
+        >
+          Continue?
+        </button>
+      </div>
 
-          <div class="heading-lg text-grey-2">
-            Sign in to your Google Wallet account.
-          </div>
+      <div class="text-tapestry text-md cursor-pointer">
+        Skip and Ask Me Later
+      </div>
+    </div>
 
-          <div class="!mt-10 text-md text-grey">
-            We’ll verify your Google Wallet account as your payment method for
-            your advertisements.
-          </div>
+    <!-- Right section -->
+    <div class="w-3/6">
+      <form class="form-grey">
+        <div class="heading-md text-grey !mb-12">
+          Google Wallet | Verify Account
+        </div>
 
-          <div class="flex flex-row !mt-10 !mb-10">
-            <button
-              mat-raised-button
-              class="button-rounded button-tapestry button-lg !mr-5"
-              matStepperPrevious
-            >
-              Go Back
-            </button>
+        <div class="flex flex-col mb-7">
+          <label class="text-sm">Google Wallet Username (E-Mail Address)</label>
+          <input
+            class="mt-2.5"
+            placeholder="Enter your Google Wallet username..."
+          />
+        </div>
+        <div class="flex flex-col mb-12">
+          <label class="text-sm">Google Wallet Password</label>
+          <input
+            class="mt-2.5"
+            placeholder="Enter your Google Wallet password..."
+          />
+        </div>
 
-            <button
-              mat-raised-button
-              class="button-rounded button-tapestry button-lg"
-              matStepperNext
-            >
-              Continue?
-            </button>
-          </div>
+        <div class="flex flex-row justify-center mb-12">
+          <button
+            mat-raised-button
+            class="button-rounded button-tapestry button-lg"
+          >
+            Sign In & Verify Account
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
 
-          <div class="text-tapestry text-md cursor-pointer">
-            Skip and Ask Me Later
-          </div>
-        </ng-container>
-      </mat-step>
+  <!-- Step 3 -->
+  <div *ngIf="selectedIndex === 2" class="flex flex-row">
+    <!-- Left section -->
+    <div class="w-3/6 tapestry-body__left-section">
+      <div class="heading-md text-grey !mb-10">Setup Complete!</div>
 
-      <!-- Step 3 -->
-      <mat-step>
-        <ng-container>
-          <div class="heading-md text-grey !mb-10">Setup Complete!</div>
+      <div class="heading-lg text-grey-2">You’re good to go!</div>
 
-          <div class="heading-lg text-grey-2">You’re good to go!</div>
+      <div class="!mt-10 text-md text-grey">
+        We have everything we need to get you building the best ad campaigns the
+        world has seen! Let’s build your first campaign!
+      </div>
 
-          <div class="!mt-10 text-md text-grey">
-            We have everything we need to get you building the best ad campaigns
-            the world has seen! Let’s build your first campaign!
-          </div>
+      <div class="flex flex-row !mt-10 !mb-10">
+        <button
+          mat-raised-button
+          class="button-rounded button-tapestry button-lg !mr-5"
+          (click)="preStep()"
+        >
+          Go Back
+        </button>
 
-          <div class="flex flex-row !mt-10 !mb-10">
-            <button
-              mat-raised-button
-              class="button-rounded button-tapestry button-lg !mr-5"
-              matStepperPrevious
-            >
-              Go Back
-            </button>
+        <button
+          mat-raised-button
+          class="button-rounded button-tapestry button-lg"
+        >
+          Finish Setup
+        </button>
+      </div>
+    </div>
 
-            <button
-              mat-raised-button
-              class="button-rounded button-tapestry button-lg"
-            >
-              Finish Setup
-            </button>
-          </div>
-        </ng-container>
-      </mat-step>
-    </mat-stepper>
+    <!-- Right section -->
+    <div class="w-3/6"></div>
   </div>
 </div>

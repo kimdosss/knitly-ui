@@ -2,7 +2,13 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AppRoutes } from 'src/app/shared/constants';
-import { MatStepper, StepState } from '@angular/material/stepper';
+
+enum PaymentType {
+  GoogleWallet = 'Google Wallet',
+  ApplePay = 'Apple Pay',
+  PayPal = 'PayPal',
+  BankAccount = 'Bank Account',
+}
 
 @Component({
   selector: 'app-tapestry-stepper',
@@ -10,11 +16,18 @@ import { MatStepper, StepState } from '@angular/material/stepper';
   styleUrls: ['./tapestry-stepper.component.scss'],
 })
 export class TapestryStepperComponent implements OnInit {
-  @ViewChild('stepper', { static: true }) stepperEl: MatStepper;
-
   stepCounts = Array(3);
   isEditable = false;
   currentStep: number;
+
+  paymentType = [
+    PaymentType.GoogleWallet,
+    PaymentType.ApplePay,
+    PaymentType.PayPal,
+    PaymentType.BankAccount,
+  ];
+  selectedIndex: number = 0;
+  selectedPayment: PaymentType;
 
   constructor(private router: Router, private _formBuilder: FormBuilder) {}
 
@@ -24,7 +37,15 @@ export class TapestryStepperComponent implements OnInit {
     this.router.navigate([AppRoutes.Tapestry]);
   }
 
+  preStep() {
+    this.selectedIndex--;
+  }
+
+  nextStep() {
+    this.selectedIndex++;
+  }
+
   selectStep(index: number) {
-    this.stepperEl.selectedIndex = index;
+    this.selectedIndex = index;
   }
 }

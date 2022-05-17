@@ -6,20 +6,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TapestryRoutingModule } from './tapestry-routing.module';
 import { TapestryComponent } from './tapestry.component';
 import { TapestryNavComponent } from './tapestry-nav/tapestry-nav.component';
-import { MatStepperModule } from '@angular/material/stepper';
 import { TapestryStepperComponent } from './tapestry-stepper/tapestry-stepper.component';
+import { TapestryPaymentItemComponent } from './tapestry-payment-item/tapestry-payment-item.component';
 
 @NgModule({
   declarations: [
     TapestryComponent,
     TapestryNavComponent,
     TapestryStepperComponent,
+    TapestryPaymentItemComponent,
   ],
   imports: [
     CommonModule,
     TapestryRoutingModule,
     MatButtonModule,
-    MatStepperModule,
     FormsModule,
     ReactiveFormsModule,
   ],

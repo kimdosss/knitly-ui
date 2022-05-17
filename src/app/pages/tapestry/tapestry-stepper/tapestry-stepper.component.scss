@@ -1,4 +1,5 @@
 @use "/src/assets/styles/colors.scss" as *;
+
 .tapestry-stepper-body {
   padding: 100px 50px 100px 100px;
 }
@@ -18,6 +19,10 @@
 
 .tapestry-stepper-controller__button--active {
   background: var(--tapestry-lighten-1);
+}
+
+.tapestry-body__left-section {
+  padding-right: 50px;
 }
 
 ::ng-deep {
