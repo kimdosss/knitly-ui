@@ -1,132 +1,148 @@
 <!-- TODO: Build content layout -->
 <app-main-nav></app-main-nav>
-<app-main-content>
-  <div class="text-grey mb-9">
-    <div class="heading-md m-0">A truly interwoven</div>
-    <div class="heading-md m-0">marketing experience.</div>
-  </div>
+<div>
+  <app-main-content [sectionId]="MainSection.AboutUs">
+    <div class="text-grey mb-9">
+      <div class="heading-md m-0">A truly interwoven</div>
+      <div class="heading-md m-0">marketing experience.</div>
+    </div>
 
-  <div class="heading-xl text-grey-2 mb-11">
-    Marketing. Plain and <span class="text-underline">simple.</span>
-  </div>
-  <p class="text-md text-grey">
-    Built from the ground up to be a Marketing as a Service company,
-    <span class="font-medium">knitly</span>
-    consolidates marketing channels into a single, easy to use application that
-    learns from and adapts your campaigns to optimize their reach and
-    effectiveness.
-  </p>
-</app-main-content>
-
-<app-main-content [leftContent]="false" [themeType]="AppTypes.Loom">
-  <div class="mb-9">
-    <div class="heading-md m-0">Making marketing simple for you.</div>
-  </div>
-
-  <div
-    class="text-5xl font-light mb-11 flex flex-row items-center logo-wrapper--contrast"
-  >
-    <img src="assets/images/logo-white.svg" />
-    <div>Loom</div>
-  </div>
-  <p class="text-md">
-    Loom is our proprietary learning algorithm that powers all of the other
-    knitly products. Loom learns from your campaigns and then adapts them to
-    ensure your advertising and marketing budgets get you the most bang for your
-    buck.
-  </p>
-
-  <div class="mt-10">
-    <button mat-stroked-button class="button-rounded button-contrast button-lg">
-      Learn More
-    </button>
-  </div>
-</app-main-content>
-
-<app-main-content>
-  <div class="text-grey mb-9">
-    <div class="heading-md m-0">Tying it all together.</div>
-  </div>
-
-  <div
-    class="text-5xl font-light mb-11 flex flex-row items-center logo-wrapper"
-  >
-    <img src="assets/images/logo-dark.svg" />
-    <div class="text-weave">Weave</div>
-  </div>
-  <p class="text-md text-grey">
-    Weave is our channel consolidation technology that ensures all channels you
-    choose to advertise on are tied together to provide your customers with a
-    unified brand experience.
-  </p>
-
-  <div class="mt-10">
-    <button mat-raised-button class="button-rounded button-weave button-lg">
-      Learn More
-    </button>
-  </div>
-</app-main-content>
-
-<app-main-content [leftContent]="false" [themeType]="AppTypes.Tapestry">
-  <div class="mb-9">
-    <div class="heading-md m-0">Design your ads once.</div>
-    <div class="heading-md m-0">Deploy them everywhere.</div>
-  </div>
-
-  <div
-    class="text-5xl font-light mb-11 flex flex-row items-center logo-wrapper--contrast"
-  >
-    <img src="assets/images/logo-white.svg" />
-    <div>Tapestry</div>
-  </div>
-  <div class="mb-2">
-    <p class="text-md">
-      Tapestry is the innovative campaign management tool that allows you to
-      build your ads once and deploy them across all selected channels.
+    <div class="heading-xl text-grey-2 mb-11">
+      Marketing. Plain and <span class="text-underline">simple.</span>
+    </div>
+    <p class="text-md text-grey">
+      Built from the ground up to be a Marketing as a Service company,
+      <span class="font-medium">knitly</span>
+      consolidates marketing channels into a single, easy to use application
+      that learns from and adapts your campaigns to optimize their reach and
+      effectiveness.
     </p>
-  </div>
+  </app-main-content>
 
-  <p class="text-md">
-    No re-jigging the campaigns to fit special ad platform needs. Just build
-    your campaign, and voila! Your campaign will be deployed among all of your
-    chosen channels.
-  </p>
+  <app-main-content
+    [leftContent]="false"
+    [themeType]="AppTypes.Loom"
+    [sectionId]="MainSection.Team"
+  >
+    <div class="mb-9">
+      <div class="heading-md m-0">Making marketing simple for you.</div>
+    </div>
 
-  <div class="mt-10 flex flex-row">
-    <div class="mr-10">
+    <div
+      class="text-5xl font-light mb-11 flex flex-row items-center logo-wrapper--contrast"
+    >
+      <img src="assets/images/logo-white.svg" />
+      <div>Loom</div>
+    </div>
+    <p class="text-md">
+      Loom is our proprietary learning algorithm that powers all of the other
+      knitly products. Loom learns from your campaigns and then adapts them to
+      ensure your advertising and marketing budgets get you the most bang for
+      your buck.
+    </p>
+
+    <div class="mt-10">
       <button
-        mat-raised-button
-        class="button-rounded button-tapestry--contrast button-lg"
+        mat-stroked-button
+        class="button-rounded button-contrast button-lg"
       >
-        Launch Tapestry
+        Learn More
       </button>
     </div>
+  </app-main-content>
 
-    <button mat-stroked-button class="button-rounded button-contrast button-lg">
-      Learn More
-    </button>
-  </div>
-</app-main-content>
-
-<div class="flex flex-col justify-center items-center my-24 text-center">
-  <div class="content-body">
-    <div class="heading-md text-grey !mb-10">
-      Multi-channel support. And growing!
-    </div>
-    <div class="heading-lg text-grey-2 !mb-10">
-      Our vision is to support as many channels as possible.
-    </div>
-    <div class="text-md text-grey !mb-2.5">
-      Currently we support several major marketing channels, <br />
-      including Google Ads, Facebook Ads, and Twitter Ads.
-    </div>
-    <div class="text-md text-grey !mb-10">
-      Our plan is to grow our channel offerings and maintain a “build once,
-      deploy everywhere strategy” across our entire platform.
+  <app-main-content [sectionId]="MainSection.Mission">
+    <div class="text-grey mb-9">
+      <div class="heading-md m-0">Tying it all together.</div>
     </div>
 
-    <button mat-raised-button class="button-rounded button-loom button-lg">
-      Contact Us to Learn More
-    </button>
+    <div
+      class="text-5xl font-light mb-11 flex flex-row items-center logo-wrapper"
+    >
+      <img src="assets/images/logo-dark.svg" />
+      <div class="text-weave">Weave</div>
+    </div>
+    <p class="text-md text-grey">
+      Weave is our channel consolidation technology that ensures all channels
+      you choose to advertise on are tied together to provide your customers
+      with a unified brand experience.
+    </p>
+
+    <div class="mt-10">
+      <button mat-raised-button class="button-rounded button-weave button-lg">
+        Learn More
+      </button>
+    </div>
+  </app-main-content>
+
+  <app-main-content
+    [leftContent]="false"
+    [themeType]="AppTypes.Tapestry"
+    [sectionId]="MainSection.Contact"
+  >
+    <div class="mb-9">
+      <div class="heading-md m-0">Design your ads once.</div>
+      <div class="heading-md m-0">Deploy them everywhere.</div>
+    </div>
+
+    <div
+      class="text-5xl font-light mb-11 flex flex-row items-center logo-wrapper--contrast"
+    >
+      <img src="assets/images/logo-white.svg" />
+      <div>Tapestry</div>
+    </div>
+    <div class="mb-2">
+      <p class="text-md">
+        Tapestry is the innovative campaign management tool that allows you to
+        build your ads once and deploy them across all selected channels.
+      </p>
+    </div>
+
+    <p class="text-md">
+      No re-jigging the campaigns to fit special ad platform needs. Just build
+      your campaign, and voila! Your campaign will be deployed among all of your
+      chosen channels.
+    </p>
+
+    <div class="mt-10 flex flex-row">
+      <div class="mr-10">
+        <button
+          mat-raised-button
+          class="button-rounded button-tapestry--contrast button-lg"
+        >
+          Launch Tapestry
+        </button>
+      </div>
+
+      <button
+        mat-stroked-button
+        class="button-rounded button-contrast button-lg"
+      >
+        Learn More
+      </button>
+    </div>
+  </app-main-content>
+
+  <div class="flex flex-col justify-center items-center my-24 text-center">
+    <div class="content-body">
+      <div class="heading-md text-grey !mb-10">
+        Multi-channel support. And growing!
+      </div>
+      <div class="heading-lg text-grey-2 !mb-10">
+        Our vision is to support as many channels as possible.
+      </div>
+      <div class="text-md text-grey !mb-2.5">
+        Currently we support several major marketing channels, <br />
+        including Google Ads, Facebook Ads, and Twitter Ads.
+      </div>
+      <div class="text-md text-grey !mb-10">
+        Our plan is to grow our channel offerings and maintain a “build once,
+        deploy everywhere strategy” across our entire platform.
+      </div>
+
+      <button mat-raised-button class="button-rounded button-loom button-lg">
+        Contact Us to Learn More
+      </button>
+    </div>
   </div>
 </div>
