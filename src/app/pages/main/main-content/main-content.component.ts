@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AppTypes } from 'src/app/shared/constants';
+import { MainSection } from '../main.component';
 
 @Component({
   selector: 'app-main-content',
@@ -9,6 +10,7 @@ import { AppTypes } from 'src/app/shared/constants';
 export class MainContentComponent implements OnInit {
   @Input() leftContent: boolean = true;
   @Input() themeType: AppTypes;
+  @Input() sectionId?: MainSection;
 
   readonly AppTypes = AppTypes;
 

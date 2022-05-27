@@ -3,16 +3,15 @@
     <img src="assets/images/logo-dark.svg" />
 
     <ul class="flex flex-row items-center">
-      <li>About</li>
-      <li>Products + Tech</li>
-      <li>Pricing</li>
-      <li>Contact</li>
+      <li *ngFor="let tab of MainSectionTabs" (click)="scrollTo(tab)">
+        {{ tab }}
+      </li>
     </ul>
   </div>
 
   <div class="flex flex-row items-center">
     <ul>
-      <li>Sign In</li>
+      <li (click)="signIn()">Sign In</li>
     </ul>
     <button
       mat-raised-button

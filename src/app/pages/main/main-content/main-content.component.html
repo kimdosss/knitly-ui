@@ -4,6 +4,7 @@
     'content-container--loom': themeType === AppTypes.Loom,
     'content-container--tapestry': themeType === AppTypes.Tapestry
   }"
+  [id]="sectionId"
 >
   <div *ngIf="!leftContent" class="w-3/6"></div>
   <div class="w-3/6 content" [ngClass]="leftContent ? '!pr-0' : '!pl-0'">
