@@ -6,12 +6,16 @@
   }"
   [id]="sectionId"
 >
-  <div *ngIf="!leftContent" class="w-3/6"></div>
+  <div *ngIf="!leftContent" class="w-3/6 img-wrapper img-wrapper--left">
+    <img *ngIf="imgId" [src]="'assets/images/main/' + imgId + '.jpg'" />
+  </div>
   <div class="w-3/6 content" [ngClass]="leftContent ? '!pr-0' : '!pl-0'">
     <div class="content-body" [ngClass]="leftContent ? 'ml-auto' : 'mr-auto'">
       <ng-content></ng-content>
     </div>
   </div>
 
-  <div *ngIf="leftContent" class="w-3/6"></div>
+  <div *ngIf="leftContent" class="w-3/6 img-wrapper img-wrapper--right">
+    <img *ngIf="imgId" [src]="'assets/images/main/' + imgId + '.jpg'" />
+  </div>
 </div>

@@ -11,6 +11,7 @@ export class MainContentComponent implements OnInit {
   @Input() leftContent: boolean = true;
   @Input() themeType: AppTypes;
   @Input() sectionId?: MainSection;
+  @Input() imgId?: string;
 
   readonly AppTypes = AppTypes;
 

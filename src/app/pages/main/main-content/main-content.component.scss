@@ -17,3 +17,22 @@
   background: var(--tapestry-lighten-1);
   color: var(--white);
 }
+
+.img-wrapper {
+  display: flex;
+  align-items: center;
+  &.img-wrapper--left {
+    justify-content: flex-start;
+    img {
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+  }
+  &.img-wrapper--right {
+    justify-content: flex-end;
+    img {
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+    }
+  }
+}

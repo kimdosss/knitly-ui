@@ -1,7 +1,7 @@
 <!-- TODO: Build content layout -->
 <app-main-nav></app-main-nav>
 <div>
-  <app-main-content [sectionId]="MainSection.AboutUs">
+  <app-main-content [sectionId]="MainSection.AboutUs" [imgId]="'1'">
     <div class="text-grey mb-9">
       <div class="heading-md m-0">A truly interwoven</div>
       <div class="heading-md m-0">marketing experience.</div>
@@ -23,6 +23,7 @@
     [leftContent]="false"
     [themeType]="AppTypes.Loom"
     [sectionId]="MainSection.Team"
+    [imgId]="'2'"
   >
     <div class="mb-9">
       <div class="heading-md m-0">Making marketing simple for you.</div>
@@ -51,7 +52,7 @@
     </div>
   </app-main-content>
 
-  <app-main-content [sectionId]="MainSection.Mission">
+  <app-main-content [sectionId]="MainSection.Mission" [imgId]="'3'">
     <div class="text-grey mb-9">
       <div class="heading-md m-0">Tying it all together.</div>
     </div>
@@ -79,6 +80,7 @@
     [leftContent]="false"
     [themeType]="AppTypes.Tapestry"
     [sectionId]="MainSection.Contact"
+    [imgId]="'4'"
   >
     <div class="mb-9">
       <div class="heading-md m-0">Design your ads once.</div>
